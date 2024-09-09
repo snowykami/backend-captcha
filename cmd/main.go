@@ -1,7 +1,7 @@
 package main
 
 import (
-	"liteyuki-captcha/api"
+	"git.liteyuki.icu/backend/captcha/api"
 )
 
 func main() {

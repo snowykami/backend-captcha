@@ -2,10 +2,10 @@ package api
 
 import (
 	"context"
+	"git.liteyuki.icu/backend/captcha/service"
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/common/utils"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
-	"liteyuki-captcha/service"
 )
 
 func verifyCreate(c context.Context, ctx *app.RequestContext) {

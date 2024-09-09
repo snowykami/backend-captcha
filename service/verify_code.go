@@ -1,9 +1,9 @@
 package service
 
 import (
+	"git.liteyuki.icu/backend/captcha/dao"
+	"git.liteyuki.icu/backend/captcha/service/base64Captcha"
 	"image/color"
-	"liteyuki-captcha/dao"
-	"liteyuki-captcha/service/base64Captcha"
 )
 
 type redisStore struct{}
