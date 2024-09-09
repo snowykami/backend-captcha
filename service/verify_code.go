@@ -1,7 +1,6 @@
 package service
 
 import (
-	"git.liteyuki.icu/backend/golite/logger"
 	"image/color"
 	"liteyuki-captcha/dao"
 	"liteyuki-captcha/service/base64Captcha"
@@ -20,7 +19,6 @@ func (s redisStore) Set(id string, value string) error {
 }
 
 func (s redisStore) Get(id string, clear bool) string {
-	logger.Trace("get redis store")
 	value, err := dao.GetStringString(id)
 	if err != nil {
 		return ""
@@ -29,7 +27,6 @@ func (s redisStore) Get(id string, clear bool) string {
 }
 
 func (s redisStore) Verify(id, answer string, clear bool) bool {
-	logger.Info("verify redis store")
 	value, err := dao.GetStringString(id)
 	if err != nil {
 		return false
@@ -45,7 +42,7 @@ func GenerateCaptcha() (id, b64s, ans string, err error) {
 		NoiseCount:      0,
 		ShowLineOptions: 0,
 		Length:          4,
-		Source:          "1234567890abcdefghijklmnopqrstuvwxyz轻雪",
+		Source:          "1234567890abcdefghijklmnopqrstuvwxyz",
 		BgColor: &color.RGBA{
 			R: 0xa2, G: 0xd8, B: 0xf4, A: 255,
 		},
