@@ -6,4 +6,6 @@ import (
 
 func main() {
 	api.Run()
+
+	select {} // block forever
 }

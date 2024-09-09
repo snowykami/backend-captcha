@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liteyuki Verify</title>
+    <script>
+        // Function to refresh the captcha image
+        let baseUrl = 'http://localhost:8888';
+        function refreshCaptcha() {
+            fetch(baseUrl+'/verify/create', {
+                method: 'POST'
+            })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('verify-code').src =  data.payload.image;
+                    document.getElementById('captcha-id').value = data.payload.id;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        // Function to submit the captcha
+        function submitCaptcha() {
+            const id = document.getElementById('captcha-id').value;
+            const answer = document.getElementById('captcha-answer').value;
+
+            fetch(baseUrl+'/verify/check', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: new URLSearchParams({
+                    'id': id,
+                    'answer': answer
+                })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.payload.result) {
+                        document.getElementById('verify-status').innerText = 'successful';
+                        refreshCaptcha();
+                    } else {
+                        document.getElementById('verify-status').innerText = 'failed';
+                        refreshCaptcha();
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        // Refresh captcha on page load
+        window.onload = refreshCaptcha;
+    </script>
+</head>
+<body>
+<img id="verify-code" src="" alt="Code" onclick="refreshCaptcha()">
+<input type="hidden" id="captcha-id">
+<br>
+<label for="captcha-answer"></label><input type="text" id="captcha-answer" placeholder="Enter captcha">
+<button onclick="submitCaptcha()">Submit</button>
+<p id="verify-status">待验证</p>
+</body>
+</html>

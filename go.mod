@@ -5,8 +5,9 @@ go 1.22.6
 require (
 	git.liteyuki.icu/backend/golite v1.0.4
 	github.com/cloudwego/hertz v0.9.3
-	github.com/mojocn/base64Captcha v1.3.6
+	github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0
 	github.com/redis/go-redis/v9 v9.6.1
+	golang.org/x/image v0.20.0
 	gorm.io/gorm v1.25.11
 )
 
@@ -25,11 +26,11 @@ require (
 	github.com/fsnotify/fsnotify v1.5.4 // indirect
 	github.com/go-mysql-org/go-mysql v1.9.0 // indirect
 	github.com/go-sql-driver/mysql v1.8.1 // indirect
-	github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0 // indirect
 	github.com/golang/protobuf v1.5.0 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/henrylee2cn/ameda v1.4.10 // indirect
 	github.com/henrylee2cn/goutil v0.0.0-20210127050712-89660552f6f8 // indirect
+	github.com/hertz-contrib/cors v0.1.0 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/klauspost/cpuid/v2 v2.0.9 // indirect
@@ -45,7 +46,6 @@ require (
 	github.com/twitchyliquid64/golang-asm v0.15.1 // indirect
 	go.uber.org/atomic v1.11.0 // indirect
 	golang.org/x/arch v0.0.0-20210923205945-b76863e36670 // indirect
-	golang.org/x/image v0.20.0 // indirect
 	golang.org/x/sys v0.25.0 // indirect
 	golang.org/x/text v0.18.0 // indirect
 	google.golang.org/protobuf v1.27.1 // indirect
