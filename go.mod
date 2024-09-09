@@ -3,7 +3,7 @@ module git.liteyuki.icu/backend/captcha
 go 1.22.6
 
 require (
-	git.liteyuki.icu/backend/golite v1.0.4
+	git.liteyuki.icu/backend/golite v1.0.7
 	github.com/cloudwego/hertz v0.9.3
 	github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0
 	github.com/redis/go-redis/v9 v9.6.1
